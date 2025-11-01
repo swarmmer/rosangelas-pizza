@@ -1,0 +1,115 @@
+/*
+ * Rosangela's Pizza - Custom Stylesheet
+ * -------------------------------------
+ * This file adds our custom brand identity on top of Pico.css
+ */
+
+/* 1. Import Google Fonts
+ * ---------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* 2. Define Brand Colors & Fonts
+ * ---------------------------------- */
+:root {
+  /* Colors */
+  --rosso: #D2042D;        /* Classic Italian Red */
+  --verde: #008C45;        /* Classic Italian Green */
+  --parchment: #FAF7F2;   /* Warm off-white background */
+  --espresso: #362C28;     /* Dark brown text */
+  --neon-red: #FF3B3B;      /* Bright CTA Red (from neon sign) */
+
+  /* Typography */
+  --font-family-headings: 'Playfair Display', serif;
+  --font-family-body: 'Lato', sans-serif;
+  
+  /* Pico Variable Overrides */
+  --primary: var(--rosso);
+  --primary-hover: var(--espresso);
+  --primary-focus: var(--rosso);
+  --primary-inverse: #FFFFFF;
+  
+  --h1-font-family: var(--font-family-headings);
+  --h2-font-family: var(--font-family-headings);
+  --h3-font-family: var(--font-family-headings);
+  --h4-font-family: var(--font-family-headings);
+  --h5-font-family: var(--font-family-headings);
+  --h6-font-family: var(--font-family-headings);
+  --font-family: var(--font-family-body);
+  
+  --color: var(--espresso);
+  --background-color: var(--parchment);
+  
+  --container-padding: 3rem 2rem;
+}
+
+/* 3. Custom Hero Section
+ * ---------------------------------- */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem 2rem 1rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--espresso);
+  margin-bottom: 2rem;
+}
+
+/* 4. Main Call-to-Action (CTA) Button
+ * ---------------------------------- */
+.cta-button {
+  --background-color: var(--neon-red);
+  --border-color: var(--neon-red);
+  --color: #FFFFFF;
+  --box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+  
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+.cta-button:hover {
+  --background-color: #E60000;
+  --border-color: #E60000;
+  --color: #FFFFFF;
+}
+
+/* 5. Image & Layout Helpers
+ * ---------------------------------- */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.welcome-grid {
+  margin-top: 4rem;
+}
+
+/* 6. Header & Footer
+ * ---------------------------------- */
+nav {
+  padding: 1.5rem 0;
+}
+
+nav ul li a {
+  font-size: 1.1rem;
+}
+
+nav a[aria-current="page"] {
+  color: var(--rosso);
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-top: 4rem;
+}
