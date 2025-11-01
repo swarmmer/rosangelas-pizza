@@ -1,13 +1,12 @@
 /*
- * Rosangela's Pizza - Custom Stylesheet (v5)
+ * Rosangela's Pizza - Custom Stylesheet (v4)
  * -------------------------------------
  * This file adds our custom brand identity on top of Pico.css
  */
 
 /* 1. Import Google Fonts
  * ---------------------------------- */
-/* === UPDATE: Added 'Italiana' font for the main headline === */
-@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
 /* 2. Define Brand Colors & Fonts
  * ---------------------------------- */
@@ -17,8 +16,6 @@
   --verde: #008C45;        /* Classic Italian Green */
 
   /* Typography */
-  /* === UPDATE: Added new headline font === */
-  --font-family-headline: 'Italiana', sans-serif;
   --font-family-headings: 'Playfair Display', serif;
   --font-family-body: 'Lato', sans-serif;
   
@@ -28,8 +25,7 @@
   --primary-focus: var(--rosso);
   --primary-inverse: #FFFFFF;
   
-  /* === UPDATE: Use 'Playfair Display' for h2-h6 === */
-  --h1-font-family: var(--font-family-headline); /* h1 gets special font */
+  --h1-font-family: var(--font-family-headings);
   --h2-font-family: var(--font-family-headings);
   --h3-font-family: var(--font-family-headings);
   --h4-font-family: var(--font-family-headings);
@@ -43,6 +39,7 @@
   --container-padding: 3rem 2rem;
 }
 
+/* === UPDATE: Force white background, overriding dark mode === */
 body {
   background-color: #FFFFFF;
 }
@@ -58,13 +55,9 @@ main.container {
   padding: 0rem 1rem 2rem 1rem;
 }
 
-/* === UPDATE: Style the new h1 font === */
 .hero h1 {
-  font-family: var(--font-family-headline); /* Use Italiana */
-  font-size: 4rem; /* Make it a bit bigger */
-  font-weight: 400; /* This font is not bold */
+  font-size: 3.5rem;
   margin-bottom: 0.5rem;
-  line-height: 1.2;
 }
 
 .hero p {
@@ -98,4 +91,100 @@ main.container {
   width: 100%;
   height: auto;
   border-radius: 0.25rem;
-  box-shadow: 0 0.5rem 1rem rgba(
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.welcome-grid {
+  margin-top: 4rem;
+}
+
+/* 6. Header & Footer
+ * ---------------------------------- */
+body::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background: linear-gradient(to right, var(--verde) 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, var(--rosso) 66.6%);
+}
+ 
+nav {
+  padding: 1rem 0;
+  align-items: center;
+}
+
+nav .logo {
+  max-width: 200px;
+  margin: 0;
+}
+
+nav ul li a {
+  font-family: var(--font-family-headings);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+nav a[aria-current="page"] {
+  color: var(--rosso);
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-top: 1px solid #eee;
+  margin-top: 4rem;
+  background-color: #FFFFFF;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+.social-link svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--primary);
+}
+.social-link:hover {
+  text-decoration: underline;
+}
+
+/* 7. Menu Page Specific Styles
+ * ---------------------------------- */
+.menu-category h2 {
+  border-bottom: 2px solid var(--rosso);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+.menu-item {
+  margin-bottom: 1rem;
+}
+.menu-item strong {
+  color: #333;
+  font-size: 1.1rem;
+}
+.menu-item span {
+  float: right;
+  color: var(--verde);
+  font-weight: 700;
+}
+.menu-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.menu-note {
+  font-style: italic;
+  font-size: 0.9rem;  
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+.pizza-table {
+  text-align: center;
+}
+.pizza-table th {
+  color: #333;
+}
