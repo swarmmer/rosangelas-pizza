@@ -1,5 +1,5 @@
 /*
- * Rosangela's Pizza - Custom Stylesheet (v2)
+ * Rosangela's Pizza - Custom Stylesheet (v3)
  * -------------------------------------
  * This file adds our custom brand identity on top of Pico.css
  */
@@ -14,9 +14,7 @@
   /* Colors */
   --rosso: #D2042D;        /* Classic Italian Red */
   --verde: #008C45;        /* Classic Italian Green */
-  --parchment: #FAF7F2;   /* (No longer used as background) */
-  --espresso: #362C28;     /* (No longer used as text) */
-  --neon-red: #FF3B3B;      /* Bright CTA Red (from neon sign) */
+  /* --neon-red: #FF3B3B; (No longer primary CTA) */
 
   /* Typography */
   --font-family-headings: 'Playfair Display', serif;
@@ -25,8 +23,7 @@
   /* === UPDATE: Pico Variable Overrides === */
   
   --primary: var(--rosso);
-  /* === UPDATE: Use Green for hover, as requested === */
-  --primary-hover: var(--verde); 
+  --primary-hover: var(--verde); /* Use Green for hover */
   --primary-focus: var(--rosso);
   --primary-inverse: #FFFFFF;
   
@@ -38,15 +35,13 @@
   --h6-font-family: var(--font-family-headings);
   --font-family: var(--font-family-body);
   
-  /* === UPDATE: Better Readability === */
-  /* Use a crisp black on a pure white background */
+  /* === UPDATE: Force clean white background === */
   --color: #333333;
   --background-color: #FFFFFF;
   
   --container-padding: 3rem 2rem;
 }
 
-/* === UPDATE: Make main content closer to header === */
 main.container {
   padding-top: 1.5rem;
 }
@@ -55,7 +50,6 @@ main.container {
  * ---------------------------------- */
 .hero {
   text-align: center;
-  /* === UPDATE: Removed top padding to fix spacing === */
   padding: 0rem 1rem 2rem 1rem;
 }
 
@@ -66,98 +60,13 @@ main.container {
 
 .hero p {
   font-size: 1.25rem;
-  color: #555; /* Darker than default, but not black */
+  color: #555;
   margin-bottom: 2rem;
 }
 
 /* 4. Main Call-to-Action (CTA) Button
  * ---------------------------------- */
 .cta-button {
-  --background-color: var(--neon-red);
-  --border-color: var(--neon-red);
-  --color: #FFFFFF;
-  --box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
-  
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 1rem 2rem;
-  text-decoration: none;
-}
-.cta-button:hover {
-  --background-color: #E60000;
-  --border-color: #E60000;
-  --color: #FFFFFF;
-}
-
-/* 5. Image & Layout Helpers
- * ---------------------------------- */
-.responsive-img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-}
-
-.welcome-grid {
-  margin-top: 4rem;
-}
-
-/* 6. Header & Footer
- * ---------------------------------- */
-
-/* === UPDATE: Added a tri-color border for Italian flag === */
-body::before {
-  content: '';
-  display: block;
-  height: 5px;
-  background: linear-gradient(to right, var(--verde) 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, var(--rosso) 66.6%);
-}
- 
-nav {
-  padding: 1rem 0;
-  align-items: center;
-}
-
-/* === UPDATE: Style for the new logo image === */
-nav .logo {
-  max-width: 250px;
-  margin: 0;
-}
-
-/* === UPDATE: Use Playfair font for nav links === */
-nav ul li a {
-  font-family: var(--font-family-headings);
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-nav a[aria-current="page"] {
-  color: var(--rosso);
-}
-
-footer {
-  text-align: center;
-  padding: 3rem 1rem;
-  border-top: 1px solid #eee;
-  margin-top: 4rem;
-  background-color: #fdfdfd;
-}
-
-/* === UPDATE: Style for the Facebook link === */
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-top: 1rem;
-}
-.social-link svg {
-  width: 24px;
-  height: 24px;
-  fill: var(--primary);
-}
-.social-link:hover {
-  text-decoration: underline;
-}
+  /* === UPDATE: Use Italian Red for main button === */
+  --background-color: var(--rosso);
+  --
