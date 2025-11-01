@@ -1,5 +1,5 @@
 /*
- * Rosangela's Pizza - Custom Stylesheet (v3)
+ * Rosangela's Pizza - Custom Stylesheet (v4)
  * -------------------------------------
  * This file adds our custom brand identity on top of Pico.css
  */
@@ -14,14 +14,12 @@
   /* Colors */
   --rosso: #D2042D;        /* Classic Italian Red */
   --verde: #008C45;        /* Classic Italian Green */
-  /* --neon-red: #FF3B3B; (No longer primary CTA) */
 
   /* Typography */
   --font-family-headings: 'Playfair Display', serif;
   --font-family-body: 'Lato', sans-serif;
   
-  /* === UPDATE: Pico Variable Overrides === */
-  
+  /* === Pico Variable Overrides === */
   --primary: var(--rosso);
   --primary-hover: var(--verde); /* Use Green for hover */
   --primary-focus: var(--rosso);
@@ -35,11 +33,15 @@
   --h6-font-family: var(--font-family-headings);
   --font-family: var(--font-family-body);
   
-  /* === UPDATE: Force clean white background === */
   --color: #333333;
-  --background-color: #FFFFFF;
+  --background-color: #FFFFFF; /* Set variable to white */
   
   --container-padding: 3rem 2rem;
+}
+
+/* === UPDATE: Force white background, overriding dark mode === */
+body {
+  background-color: #FFFFFF;
 }
 
 main.container {
@@ -67,6 +69,122 @@ main.container {
 /* 4. Main Call-to-Action (CTA) Button
  * ---------------------------------- */
 .cta-button {
-  /* === UPDATE: Use Italian Red for main button === */
   --background-color: var(--rosso);
-  --
+  --border-color: var(--rosso);
+  --color: #FFFFFF;
+  --box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+  
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  text-decoration: none;
+}
+.cta-button:hover {
+  --background-color: var(--verde);
+  --border-color: var(--verde);
+  --color: #FFFFFF;
+}
+
+/* 5. Image & Layout Helpers
+ * ---------------------------------- */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.welcome-grid {
+  margin-top: 4rem;
+}
+
+/* 6. Header & Footer
+ * ---------------------------------- */
+body::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background: linear-gradient(to right, var(--verde) 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, var(--rosso) 66.6%);
+}
+ 
+nav {
+  padding: 1rem 0;
+  align-items: center;
+}
+
+nav .logo {
+  max-width: 200px;
+  margin: 0;
+}
+
+nav ul li a {
+  font-family: var(--font-family-headings);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+nav a[aria-current="page"] {
+  color: var(--rosso);
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-top: 1px solid #eee;
+  margin-top: 4rem;
+  background-color: #FFFFFF;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+.social-link svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--primary);
+}
+.social-link:hover {
+  text-decoration: underline;
+}
+
+/* 7. Menu Page Specific Styles
+ * ---------------------------------- */
+.menu-category h2 {
+  border-bottom: 2px solid var(--rosso);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+.menu-item {
+  margin-bottom: 1rem;
+}
+.menu-item strong {
+  color: #333;
+  font-size: 1.1rem;
+}
+.menu-item span {
+  float: right;
+  color: var(--verde);
+  font-weight: 700;
+}
+.menu-item p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.menu-note {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+.pizza-table {
+  text-align: center;
+}
+.pizza-table th {
+  color: #333;
+}
